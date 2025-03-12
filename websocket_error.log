@@ -1,0 +1,12 @@
+/home/newduel.pp.ua/public_html/server.js:48
+            console.log(`📩 Mensagem recebida na página: ${currentPage ?? 'Página Desconhecida'}`); // Log da página atual, fallback se currentPage estiver faltando
+                                                                        ^
+
+SyntaxError: Unexpected token '?'
+    at wrapSafe (internal/modules/cjs/loader.js:915:16)
+    at Module._compile (internal/modules/cjs/loader.js:963:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1027:10)
+    at Module.load (internal/modules/cjs/loader.js:863:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:708:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:60:12)
+    at internal/main/run_main_module.js:17:47

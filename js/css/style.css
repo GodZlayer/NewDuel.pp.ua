@@ -1,0 +1,148 @@
+.form-container {
+    max-width: 400px;
+    padding: 15px;
+    margin: auto;
+}
+
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #2c2c2c; /* Cor grafite */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.5s ease-out;
+}
+
+.preloader-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-logo {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    z-index: 2;
+}
+
+.loader-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 6px solid transparent;
+    border-top: 6px solid #00ffcc;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    z-index: 1;
+}
+
+/* Animações */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+
+
+
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do Topo */
+.top-bar {
+    width: 100%;
+    height: 50px;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: white;
+}
+
+/* Logo */
+.logo {
+    height: 40px;
+    max-width: 150px;
+    object-fit: contain;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #333;
+    min-width: 150px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #444;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Barra Inferior */
+.bottom-bar {
+    width: 100%;
+    height: 40px;
+    background-color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-bar nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.bottom-bar nav a:hover {
+    text-decoration: underline;
+}

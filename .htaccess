@@ -1,0 +1,20 @@
+CacheDisable public /
+
+RewriteEngine On
+
+# Definir index.php como conteúdo da raiz
+RewriteCond %{REQUEST_URI} !^/index.php
+RewriteCond %{REQUEST_URI} !\.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|otf|eot|mp4|webm|ogg|json|txt|xml|zip|pdf|tar|gz|bz2|7z)$ [NC]
+RewriteRule ^(.*)$ /index.php [L]
+
+# WebSocket (WS) - Para conexões sem segurança (apenas se necessário)
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:Upgrade} websocket [NC]
+RewriteCond %{HTTP:Connection} upgrade [NC]
+RewriteRule .* ws://127.0.0.1:8443%{REQUEST_URI} [P,L]
+
+# WebSocket Seguro (WSS) - Para conexões seguras com SSL/TLS
+RewriteCond %{HTTPS} =on
+RewriteCond %{HTTP:Upgrade} websocket [NC]
+RewriteCond %{HTTP:Connection} upgrade [NC]
+RewriteRule .* wss://127.0.0.1:8443%{REQUEST_URI} [P,L]
